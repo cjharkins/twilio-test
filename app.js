@@ -22,6 +22,12 @@ app.get('/twiml', (req, res) => {
 
 app.listen(process.env.PORT || 3000,()=>{
   console.log('The app is running');
+  const twiml = new VoiceResponse();
+
+  twiml.say('Hello from your pals at Twilio! Have fun.');
+
+  res.writeHead(200, { 'Content-Type': 'text/xml' });
+  res.end(twiml.toString());
 });
 
 module.exports = app
