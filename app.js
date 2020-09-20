@@ -3,7 +3,13 @@ const express =require('express');
 const app = express();
 
 app.get('/',(req,res)=>{
-  res.send('<h1>Hey!</h1>')
+  // res.send('<h1>Hey!</h1>')
+  const twiml = new VoiceResponse();
+
+  twiml.say('Hello from your pals at Twilio! Have fun.');
+
+  res.writeHead(200, { 'Content-Type': 'text/xml' });
+  res.end(twiml.toString());
 })
 
 app.get('/twiml', (req, res) => {
