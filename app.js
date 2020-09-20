@@ -17,3 +17,5 @@ app.get('/twiml', (req, res) => {
 app.listen(3000,()=>{
   console.log('The app is running on localhost:3000');
 });
+
+module.exports = app
