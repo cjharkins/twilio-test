@@ -5,7 +5,10 @@ const port = 1337;
 
 
 app.get('/',(req,res)=>{
+  console.log('incoming')
+  res.statusCode(200)
   res.json({message: 'Welcome to the backend'})
+  res.end('Hello!')
 })
 
 app.get('/twiml', (req, res) => {
