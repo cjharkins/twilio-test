@@ -14,7 +14,7 @@ app.get('/twiml', (req, res) => {
   res.end(twiml.toString())
 })
 
-app.listen(process.env.port || 3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
   console.log('The app is running');
 });
 
