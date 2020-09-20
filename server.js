@@ -1,8 +1,7 @@
-const http = require('http')
 const VoiceResponse = require('twilio').twiml.VoiceResponse
 const express =require('express');
 const app = express();
-const PORT = 1337;
+const port = 1337;
 
 
 app.get('/',(req,res)=>{
@@ -17,4 +16,8 @@ app.get('/twiml', (req, res) => {
   res.end(twiml.toString())
 })
 
-app.listen(PORT,(req, res) => console.log('Listening on port 1337'))
+
+const httpServer = require('http').createServer(app);
+httpServer.listen(port, function() {
+  console.log('example running on port ' + port + '.');
+});
