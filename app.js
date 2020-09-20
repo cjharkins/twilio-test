@@ -1,3 +1,4 @@
+const http = require('http')
 const VoiceResponse = require('twilio').twiml.VoiceResponse
 const express =require('express');
 const app = express();
@@ -20,7 +21,7 @@ app.get('/twiml', (req, res) => {
   res.end(twiml.toString())
 })
 
-app.listen(process.env.PORT || 3000,()=>{
+http.createServer((req, res)=>{
   console.log('The app is running');
   const twiml = new VoiceResponse();
 
@@ -28,6 +29,6 @@ app.listen(process.env.PORT || 3000,()=>{
 
   res.writeHead(200, { 'Content-Type': 'text/xml' });
   res.end(twiml.toString());
-});
+}).listen(process.env.PORT || 3000);
 
 module.exports = app
