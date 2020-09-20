@@ -5,9 +5,6 @@ const port = 1337;
 
 
 app.get('/',(req,res)=>{
-  console.log('incoming')
-  res.statusCode(200)
-  res.json({message: 'Welcome to the backend'})
   res.end('Hello!')
 })
 
@@ -20,7 +17,6 @@ app.get('/twiml', (req, res) => {
 })
 
 
-const httpServer = require('http').createServer(app);
-httpServer.listen(port, function() {
-  console.log('example running on port ' + port + '.');
-});
+app.listen(3000, () => {
+  console.log('API Server Listening on port 3000')
+})
