@@ -1,11 +1,9 @@
 const VoiceResponse = require('twilio').twiml.VoiceResponse
 const express =require('express');
 const app = express();
-const port = 1337;
-
 
 app.get('/',(req,res)=>{
-  res.end('Hello!')
+  res.send('<h1>Hey!</h1>')
 })
 
 app.get('/twiml', (req, res) => {
@@ -16,7 +14,6 @@ app.get('/twiml', (req, res) => {
   res.end(twiml.toString())
 })
 
-
-app.listen(3000, () => {
-  console.log('API Server Listening on port 3000')
-})
+app.listen(3000,()=>{
+  console.log('The app is running on localhost:3000');
+});
