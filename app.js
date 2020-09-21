@@ -9,6 +9,7 @@ http.createServer((req, res)=>{
 
   twiml.say('Hello from Cory Harkins, testing a node.js application he just built!');
   twiml.say('I really appreciate you giving me the opportunity to interview!')
+  twiml.say('Thank you so much. Goodbye!')
 
   res.writeHead(200, { 'Content-Type': 'text/xml' });
   res.end(twiml.toString());
