@@ -8,6 +8,7 @@ http.createServer((req, res)=>{
   const twiml = new VoiceResponse();
 
   twiml.say('Hello from Cory Harkins, testing a node.js application he just built!');
+  twiml.say('I really appreciate you giving me the opportunity to interview!')
 
   res.writeHead(200, { 'Content-Type': 'text/xml' });
   res.end(twiml.toString());
